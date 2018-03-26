@@ -7,6 +7,7 @@ COPY entrypoint.sh /fluentd/entrypoint.sh
 RUN chmod +x /fluentd/entrypoint.sh
 
 RUN fluent-gem install fluent-plugin-logzio
+RUN fluent-gem install fluent-plugin-rewrite-tag-filter
 
 COPY conf/fluent.conf /fluentd/etc/fluent.conf
 COPY conf/kubernetes.conf /fluentd/etc/kubernetes.conf
